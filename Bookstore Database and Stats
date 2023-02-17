@@ -1,0 +1,24 @@
+-Create a bookstore database.
+
+CREATE TABLE bookstore (id INTEGER PRIMARY KEY, name TEXT, author TEXT, genre TEXT, price REAL);
+INSERT INTO bookstore VALUES (1, "Harry Potter and the Sorceror's Stone", "J.K. Rowling", "Fantasy", 10.99);
+INSERT INTO bookstore VALUES (2, "A Court of Thorns and Roses", "Sarah J. Maas", "Fantasy", 17.99);
+INSERT INTO bookstore VALUES (3, "Red, White, and Royal Blue", "Casey McQuiston", "Romance", 13.99);
+INSERT INTO bookstore VALUES (4, "A Ballad of Songbirds and Snakes", "Suzanne Collins", "Distopian Fiction", 18.99);
+INSERT INTO bookstore VALUES (5, "The Love Hypothesis", "Ali Hazelwood", "Romance", 12.99);
+INSERT INTO bookstore VALUES (6, "The Seven Husbands of Evelyn Hugo", "Taylor Jenkins Reid", "Historical Fiction", 15.99);
+INSERT INTO bookstore VALUES (7, "Someday, Maybe", "Onyi Nwabineli", "Contemporary Fiction", 15.99);
+INSERT INTO bookstore VALUES (8, "The Membranes", "Chi Ta-Wei", "Distopian Fiction", 9.99);
+INSERT INTO bookstore VALUES (9, "Halfway to the Grave", "Jeaniene Frost", "Paranormal Romance", 3.99);
+INSERT INTO bookstore VALUES (10, "Dark Lover", "J.R. Ward", "Paranormal Fiction", 4.99);
+INSERT INTO bookstore VALUES (11, "Anna Karenina", "Leo Tolstoy", "Classic", 12.99);
+INSERT INTO bookstore VALUES (12, "If We Were Villains", "M.L. Rio", "Dark Academia", 13.99);
+INSERT INTO bookstore VALUES (13, "Jacqueline in Paris", "Ann Mah", "Historical Fiction", 15.99);
+INSERT INTO bookstore VALUES (14, "Ninth House", "Leigh Bardugo", "Dark Academia", 15.99);
+INSERT INTO bookstore VALUES (15, "Conversations with Friends", "Sally Rooney", "Contemporary Fiction", 9.99);
+
+-Display the database ordered by price.
+SELECT * FROM bookstore ORDER BY price;
+
+-What is the most expensive book for sale at the bookstore?
+SELECT MAX(price) FROM bookstore;
