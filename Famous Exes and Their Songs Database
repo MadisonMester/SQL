@@ -1,0 +1,46 @@
+-Create a table listing the musicians name and age.
+CREATE TABLE musicians (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER);
+
+INSERT INTO musicians (name, age) VALUES ("Taylor Swift", 32);
+INSERT INTO musicians (name, age) VALUES ("Sabrina Carpenter", 23);
+INSERT INTO musicians (name, age) VALUES ("Harry Styles", 28);
+INSERT INTO musicians (name, age) VALUES ("Olivia Rodrigo", 19);
+INSERT INTO musicians (name, age) VALUES ("Joshua Bassett", 22);
+INSERT INTO musicians (name, age) VALUES ("John Mayer", 45);
+INSERT INTO musicians (name, age) VALUES ("Adele", 34);
+
+-Create a table listing the id's of the musicians who are exes.
+CREATE TABLE exes (singer1 INTEGER, singer2 INTEGER);
+INSERT INTO exes VALUES (1,3);
+INSERT INTO exes VALUES (1,6);
+INSERT INTO exes VALUES (2,5);
+INSERT INTO exes VALUES (4,5);
+
+-Create a table listing song name, musician id, and the release year of the song.
+CREATE TABLE songs (name TEXT, artist INTEGER, release_year INTEGER);
+INSERT INTO songs VALUES ("All Too Well", 1, 2012);
+INSERT INTO songs VALUES ("We Are Never Getting Back Together", 1, 2012);
+INSERT INTO songs VALUES ("decode", 2, 2022);
+INSERT INTO songs VALUES ("Tornado Warnings", 2, 2022);
+INSERT INTO songs VALUES ("Watermelon Sugar", 3, 2020);
+INSERT INTO songs VALUES ("Music For A Sushi Restaurant", 3, 2022);
+INSERT INTO songs VALUES ("good for u", 4, 2021);
+INSERT INTO songs VALUES ("drivers license", 4, 2020);
+INSERT INTO songs VALUES ("Sad Songs In A Hotel Room", 5, 2022);
+INSERT INTO songs VALUES ("LA", 5, 2022);
+INSERT INTO songs VALUES ("Last Train Home", 6, 2021);
+INSERT INTO songs VALUES ("Shouldn't Matter but It Does", 6, 2021);
+INSERT INTO songs VALUES ("Hello", 7, 2015);
+INSERT INTO songs VALUES ("I Miss You", 7, 2015);
+
+-Display musicians matched up with their musician ex.
+SELECT musicians.name, musicians2.name FROM musicians
+    LEFT OUTER JOIN musicians musicians2
+    ON exes.singer1 = musicians2.id
+    JOIN exes
+    ON exes.singer2 = musicians.id;
+    
+-Display the musician name matched up with their song title.
+SELECT songs.name, musicians.name FROM musicians
+    JOIN songs
+    ON musicians.id = songs.artist;
