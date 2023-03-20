@@ -1,0 +1,30 @@
+#In this project, I am using a database containing employees of a digital media store, customers, their invoices, and music the store sells. 
+#I have asked used the below SQL to answer a few questions regarding the data.
+
+#1. Show customers (their full names, customer ID, and their country) who are not in the US.
+SELECT CustomerId, FirstName, LastName, Country
+FROM chinook.customers
+WHERE Country <>'USA';
+
+#2. Show only the customers from Brazil.
+SELECT CustomerId, FirstName, LastName, Country
+FROM chinook.customers
+WHERE Country = 'Brazil';
+
+#3. Find the invoices of customers who are from Brazil. Show the customer's full name, Invoice ID, date of the invoice, and billing country.
+SELECT cust.CustomerId, cust.FirstName, cust.LastName, inv.InvoiceId, inv.InvoiceDate, inv.BillingCountry
+FROM chinook.invoices inv
+LEFT JOIN chinook.customers cust
+ON inv.CustomerId=cust.CustomerId
+WHERE inv.BillingCountry='Brazil';
+
+#4. Show the employees who are Sales Agents.
+SELECT *
+FROM chinook.employees
+WHERE Title = 'Sales Support Agent';
+
+#5. Find a unique/distinct list of billing countries from the Invoices table.
+SELECT distinct BillingCountry
+FROM chinook.invoices;
+
+#6. Provide a query that shows the invoices associated with each sales agent. The resulting table should include the sales agent's full name.
