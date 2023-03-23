@@ -108,6 +108,10 @@ JOIN chinook.playlists p
 ON pt.PlaylistId = p.PlaylistId
 ORDER BY p.Name;
 
-#16. How many tracks does each playlist have on average?
-
+#16. How many tracks does each playlist have?
+SELECT p.Name as Playlist, count(trackId) as TrackCount
+FROM chinook.playlists p
+JOIN chinook.playlist_track pt
+ON p.playlistid = pt.playlistid
+GROUP BY p.Name;
 
