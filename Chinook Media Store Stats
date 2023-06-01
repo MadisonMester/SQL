@@ -1,5 +1,5 @@
 #In this project, I am using a database containing employees of a digital media store, customers, their invoices, and music the store sells. 
-#I have asked used the below SQL to answer a few questions regarding the data.
+#I have used the below SQL to answer a few questions regarding the data.
 
 #1. Show customers (their full names, customer ID, and their country) who are not in the US.
 SELECT CustomerId, FirstName, LastName, Country
